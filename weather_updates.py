@@ -14,10 +14,10 @@ def get_weather_data(city, api_key):
 
         data = req.json()
         temp = data["current"]["temp_c"]
-        print(f"The current weather of {city} is {temp} degrees Celsius.")
+        print(f"The current temperature of {city} is {temp} degrees Celsius.")
         
         speaker = win32com.client.Dispatch("SAPI.SpVoice")
-        speaker.Speak(f"The current weather of {city} is {temp} degrees Celsius.")
+        speaker.Speak(f"The current temperature of {city} is {temp} degrees Celsius.")
 
         return data
     except requests.exceptions.RequestException as e:
